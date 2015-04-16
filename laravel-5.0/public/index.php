@@ -52,8 +52,9 @@ $response = $kernel->handle(
 	$request = Illuminate\Http\Request::capture()
 );
 
-$response->send();
+$response->sendHeaders();
+$response->sendContent();
 
-$kernel->terminate($request, $response);
+//$kernel->terminate($request, $response);
 
 echo "\n" . (memory_get_peak_usage(true)/1024/1024);

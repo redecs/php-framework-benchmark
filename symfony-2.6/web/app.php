@@ -26,7 +26,8 @@ $kernel->loadClassCache();
 //Request::enableHttpMethodParameterOverride();
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
-$response->send();
-$kernel->terminate($request, $response);
+$response->sendHeaders();
+$response->sendContent();
+//$kernel->terminate($request, $response);
 
 echo "\n" . (memory_get_peak_usage(true)/1024/1024);

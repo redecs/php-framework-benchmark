@@ -24,7 +24,7 @@ route: {
 
 // Adhoc fix for benchmarking
 // Remove sub directories from URI
-$pagePath = preg_replace('!/php-framework-benchmark/bear-1.0/var/www/index.php!', '', $request->path);
+$pagePath = preg_replace('!/bear-1.0/var/www/index.php!', '', $request->path);
 //var_dump($pagePath); exit;
 
 try {

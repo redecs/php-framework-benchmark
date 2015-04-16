@@ -14,19 +14,19 @@ mv "$check_file" "$check_file.old"
 url_file="output/urls.log"
 mv "$url_file" "$url_file.old"
 
-:<<'#COMMENT'
+#:<<'#COMMENT'
 fw="no-framework"
 url="$base/$fw/index.php"
 benchmark "$fw" "$url"
-#COMMENT
+##COMMENT
 
-#fw="phalcon-1.3"
-#url="$base/$fw/public/index.php?_url=/hello/index"
-#benchmark "$fw" "$url"
-
-fw="phalcon-2.0"
+fw="phalcon-1.3"
 url="$base/$fw/public/index.php?_url=/hello/index"
 benchmark "$fw" "$url"
+
+#fw="phalcon-2.0"
+#url="$base/$fw/public/index.php?_url=/hello/index"
+#benchmark "$fw" "$url"
 
 fw="slim-2.6"
 url="$base/$fw/index.php/hello/index"
@@ -52,13 +52,13 @@ fw="bear-1.0"
 url="$base/$fw/var/www/index.php/hello"
 benchmark "$fw" "$url"
 
-fw="fuel-1.8-dev"
-url="$base/$fw/public/index.php/hello/index"
-benchmark "$fw" "$url"
+#fw="fuel-1.8-dev"
+#url="$base/$fw/public/index.php/hello/index"
+#benchmark "$fw" "$url"
 
-fw="cake-3.0"
-url="$base/$fw/index.php/hello/index"
-benchmark "$fw" "$url"
+#fw="cake-3.0"
+#url="$base/$fw/index.php/hello/index"
+#benchmark "$fw" "$url"
 
 #fw="bear-0.10"
 #url="$base/$fw/var/www/index.php/hello"
@@ -88,8 +88,8 @@ fw="zf-2.4"
 url="$base/$fw/public/index.php/application/hello/index"
 benchmark "$fw" "$url"
 
-fw="typo3-flow-2.3"
-url="$base/$fw/Web/index.php/flow/benchmark"
-benchmark "$fw" "$url"
+#fw="typo3-flow-2.3"
+#url="$base/$fw/Web/index.php/flow/benchmark"
+#benchmark "$fw" "$url"
 
 cat "$check_file"

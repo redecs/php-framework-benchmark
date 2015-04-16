@@ -25,6 +25,10 @@ $app = require __DIR__.'/../bootstrap/app.php';
 |
 */
 
-$app->run();
+
+//$app->run();
+$response = $app->dispatch();
+$response->sendHeaders();
+$response->sendContent();
 
 echo "\n" . (memory_get_peak_usage(true)/1024/1024);
